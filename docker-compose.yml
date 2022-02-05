@@ -1,0 +1,36 @@
+version: '3'
+
+services:
+  php:
+    build: ./docker/php
+    volumes:
+      - ./src:/var/www
+    ports:
+      - ${WEB_PORT}:80
+
+  mysql:
+    build: ./docker/mysql
+    ports:
+        - ${DB_PORT}:3306
+    environment:
+        MYSQL_DATABASE: ${DB_NAME}
+        MYSQL_USER: ${DB_USER}
+        MYSQL_ROOT_PASSWORD: ${DB_PASS}
+        MYSQL_PASSWORD: ${DB_PASS}
+    volumes: 
+        - ./docker/mysql/data:/var/lib/mysql
+        - ./docker/mysql/initdb.d:/docker-entrypoint-initdb.d
+
+  phpmyadmin:
+    image: phpmyadmin/phpmyadmin
+    environment:
+      - PMA_ARBITRARY=1
+      - PMA_HOST=mysql #mysqlサービス名を指定
+      - PMA_USER=${PMA_USER}
+      - PMA_PASSWORD=${PMA_PASS}
+    links:
+      - mysql
+    ports:
+      - ${PMA_PORT}:80
+    volumes:
+      - ./phpmyadmin/sessions:/sessions
