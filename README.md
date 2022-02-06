@@ -3,6 +3,26 @@ PHP 8.0.15
 Apache 2.4.52  
 mysql 8.0.20  
 
+## 導入手順
+①git cloneする  
+% git clone https://github.com/kamoto0427/laravel-docker.git  
+
+②任意ですが、現在のプロジェクト名はlaravel-dockerなので、自分なりにプロジェクト名変えてもOK  
+
+③.envファイルを作成する  
+.env_exampleに雛形書いているので、こちらをコピーし、.envを作成→環境変数を設定する。
+laravel-project % cp .env .env_example
+
+④dockerコンテナを作成&起動  
+laravel-docker % docker-compose up -d
+
+⑤コンテナが立ち上がったか確認
+laravel-docker % docker ps  
+CONTAINER ID   IMAGE                     STATUS            NAMES  
+ed53d7657c9c   phpmyadmin/phpmyadmin      Up 2 seconds     laravel-docker_phpmyadmin_1  
+e097a04f31fc   laravel-docker_php         Up 4 seconds     laravel-docker_php_1  
+05d9962d3e35   laravel-docker_mysql       Up 4 seconds     laravel-docker_mysql_1  
+
 ## .envファイルに環境変数を書く
 * docker-compose.ymlや.gitignoreと同じ階層に.envを作成  
 .envはgit管理しないように注意する。(.gitignoreに記述)  
