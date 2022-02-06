@@ -10,13 +10,13 @@ mysql 8.0.20
 ②任意ですが、現在のプロジェクト名はlaravel-dockerなので、自分なりにプロジェクト名変えてもOK  
 
 ③.envファイルを作成する  
-.env_exampleに雛形書いているので、こちらをコピーし、.envを作成→環境変数を設定する。
+.env_exampleに雛形書いているので、こちらをコピーし、.envを作成→環境変数を設定する  
 laravel-project % cp .env .env_example
 
 ④dockerコンテナを作成&起動  
 laravel-docker % docker-compose up -d
 
-⑤コンテナが立ち上がったか確認
+⑤コンテナが立ち上がったか確認  
 laravel-docker % docker ps  
 CONTAINER ID   IMAGE                     STATUS            NAMES  
 ed53d7657c9c   phpmyadmin/phpmyadmin      Up 2 seconds     laravel-docker_phpmyadmin_1  
