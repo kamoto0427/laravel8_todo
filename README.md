@@ -8,10 +8,15 @@ mysql 8.0.20
 % git clone https://github.com/kamoto0427/laravel-docker.git  
 
 ②任意ですが、現在のプロジェクト名はlaravel-dockerなので、自分なりにプロジェクト名変えてもOK  
+今回はプロジェクト名をlaravel-dockerにしているので、  
+laravel-docker % コマンド  
+となっていますが、プロジェクト名を変更したならば、  
+プロジェクト名 % コマンド  
+でOKです。
 
 ③.envファイルを作成する  
 .env_exampleに雛形書いているので、こちらをコピーし、.envを作成→環境変数を設定する  
-laravel-project % cp .env .env_example
+laravel-docker % cp .env .env_example
 
 ④dockerコンテナを作成&起動  
 laravel-docker % docker-compose up -d
