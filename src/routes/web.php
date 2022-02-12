@@ -14,8 +14,6 @@ use App\Http\Controllers\TasksController;
 |
 */
 
-// Route::get('/', function () {
-//     return view('welcome');
-// });
-
 Route::get('/', [TasksController::class, 'index'])->name('tasks.index');
+// 詳細ページ
+Route::get('/{id}', [TasksController::class, 'show'])->name('tasks.show');
