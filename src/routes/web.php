@@ -21,3 +21,7 @@ Route::get('/{id}', [TasksController::class, 'show'])->name('tasks.show');
 Route::get('/tasks/add', [TasksController::class, 'add'])->name('tasks.add');
 // タスク追加-DBに値を入れる処理
 Route::post('/tasks/add', [TasksController::class, 'store'])->name('tasks.store');
+// タスク編集画面
+Route::get('/tasks/edit/{id}', [TasksController::class, 'edit'])->name('tasks.edit');
+// タスク更新処理
+Route::post('tasks/edit/{id}', [TasksController::class, 'update'])->name('tasks.update');
