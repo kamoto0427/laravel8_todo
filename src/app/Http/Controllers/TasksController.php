@@ -12,7 +12,8 @@ class TasksController extends Controller
      */
     public function index()
     {
-        $tasks = Task::get();
+        // 更新日時が最新順に並び替えて、タスク一覧を取得
+        $tasks = Task::orderBy('updated_at', 'desc')->get();
         return view('tasks.index', compact('tasks'));
     }
 
