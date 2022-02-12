@@ -40,7 +40,7 @@
         <tr>
             <td>{{ $task->name }}</td>
             <td>
-                <a href="">詳細</a>
+                <a href="{{ route('tasks.show', ['id' => $task->id]) }}">詳細</a>
                 <a href="">編集</a>
                 <a href="">削除</a>
             </td>
