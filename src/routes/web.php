@@ -19,3 +19,5 @@ Route::get('/', [TasksController::class, 'index'])->name('tasks.index');
 Route::get('/{id}', [TasksController::class, 'show'])->name('tasks.show');
 // タスク追加
 Route::get('/tasks/add', [TasksController::class, 'add'])->name('tasks.add');
+// タスク追加-DBに値を入れる処理
+Route::post('/tasks/add', [TasksController::class, 'store'])->name('tasks.store');

@@ -32,4 +32,19 @@ class TasksController extends Controller
     {
         return view('tasks.add');
     }
+
+    /**
+     * タスク追加-DBに値を入れる処理
+     */
+    public function store(Request $request)
+    {
+        // tasksテーブルにフォームで入力した値を挿入する
+        $result = Task::create([
+            'name' => $request->name,
+            'content' => $request->content,
+        ]);
+
+        // タスク一覧画面にリダイレクト
+        return redirect()->route('tasks.index');
+    }
 }
