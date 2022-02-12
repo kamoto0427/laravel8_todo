@@ -7,6 +7,10 @@
         width: 80%;
         margin: 0 auto;
     }
+    .task__add {
+        text-align: right;
+        padding-bottom: 10px;
+    }
     table {
         border-spacing: 0;
         border-collapse: collapse;
@@ -31,6 +35,9 @@
 </style>
 <h1>タスク一覧</h1>
 <div class="container">
+    <div class="task__add">
+        <a href="">＋タスクを追加する</a>
+    </div>
     <table>
         <tr>
             <th>タスク</th>
