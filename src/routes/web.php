@@ -25,3 +25,5 @@ Route::post('/tasks/add', [TasksController::class, 'store'])->name('tasks.store'
 Route::get('/tasks/edit/{id}', [TasksController::class, 'edit'])->name('tasks.edit');
 // タスク更新処理
 Route::post('tasks/edit/{id}', [TasksController::class, 'update'])->name('tasks.update');
+// タスクを削除する
+Route::post('tasks/delete/{id}', [TasksController::class, 'delete'])->name('tasks.delete');
