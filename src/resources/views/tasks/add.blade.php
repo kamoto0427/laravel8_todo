@@ -38,11 +38,11 @@
 @csrf
     <div class="form-group">
         <label for="name">タスク<span>(必須)</span></label><br>
-        <input type="text" name="name" maxlength="30" placeholder="タスクは30文字で書きましょう。">
+        <input type="text" name="name" maxlength="30" placeholder="タスクは30文字で書きましょう。" value="{{ old('name') }}">
     </div>
     <div class="form-group">
         <label for="content">タスク内容<span>(必須)</span></label><br>
-        <textarea rows="5" name="content" placeholder="タスク内容を具体的に書きましょう"></textarea>
+        <textarea rows="5" name="content" placeholder="タスク内容を具体的に書きましょう">{{ old('content') }}</textarea>
     </div>
     <button type="submit">追加する</button>
 </form>
