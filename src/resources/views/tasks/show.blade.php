@@ -58,7 +58,10 @@
             <a href="{{ route('tasks.edit', ['id' => $task->id]) }}">編集する</a>
         </div>
         <div class="link__delete">
-            <a href="">削除する</a>
+            <form action="{{ route('tasks.delete', ['id' => $task->id]) }}" method="POST" name="deleteForm">
+                @csrf
+                    <button type="submit">削除</button>
+            </form>
         </div>
     </div>
 </div>
